@@ -1,0 +1,30 @@
+body{
+    width: 750px;
+    margin: 0 auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.banner{
+    width: 750px;
+    height: 100px;
+}
+
+/*       Footer         */
+p{
+    text-align: justify;
+}
+
+footer{
+    width: 750px;
+    border: 1px solid;
+    border-color: blue;
+}
+
+address{
+    padding-top: 15px;
+    font-family: "Times New Roman";
+    text-align: center;
+}

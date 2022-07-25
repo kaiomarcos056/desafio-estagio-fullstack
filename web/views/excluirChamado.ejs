@@ -1,0 +1,23 @@
+<%- include('menu') -%>
+<%- include('navbar') -%>
+
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card" style="min-height: 485px">
+                <div class="card-header card-header-text">
+                    <h4 class="card-title">Excluir Chamado</h4>
+                </div>
+                <div class="card-content table-responsive" style="padding: 10px;">
+                    <form action="/excluirChamado/<%=modelo.id_chamado %>" method="post">
+                        <%- include('eliminarChamado') -%>
+                        <div class="col-sm-10">
+                            <input type="submit" value="Excluir Chamado" class="btn btn-default btn-danger" />
+                            <a href="/chamados" class="btn btn-outline-dark cancel">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

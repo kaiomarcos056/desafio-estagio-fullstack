@@ -1,0 +1,48 @@
+<%- include('menu') -%>
+<%- include('navbar') -%>
+
+<% for (const funcionarios of modelo) { %>
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card" style="min-height: 485px">
+                <div class="card-header card-header-text">
+                    <h4 class="card-title">Crachá Virtual</h4>
+                </div>
+                <div class="card-content table-responsive" style="padding: 20px;">
+                    <div class="row">
+                        <div class="col-sm-6">
+                          <div class="card" style="background-image: url('../img/bgcracha.svg');background-repeat: no-repeat;background-size: 40vh;height: 59vh;width: 40vh;">
+                            <div class="card-body" style="padding:0 ;">
+                                <div class="container" style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin-top: 50%;">
+                                    <img src="../img/imgUser/<%= funcionarios.foto%>" class="img-fluid" style="border: 2px solid;border-radius: 10px;width: 50%;">
+                                </div>
+                              <h5 class="card-title"></h5>
+                              <p class="card-text" style="text-align: center;font-size: 34px;padding: 4px;color: black;"><b><%= funcionarios.nome%></b></p>
+                              <p class="card-text" style="text-align: center;font-size: 28px;color: black;"><b><%= funcionarios.funcao%></b></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card" style="background-image: url('../img/backcracha.svg');background-repeat: no-repeat;background-size: 40vh;height: 59vh;width: 40vh;">
+                              <div class="card-body" style="padding:0 ;padding: 15px;margin-top: 19%;">
+                                
+                                  <p class="card-text" style="text-align: left;font-size: 15px;margin-top: 4px;color: black;">-Este crachá é de uso pessoal e intransferivel;</p>
+                                  <p class="card-text" style="text-align: left;font-size: 15px;margin-top: 4px;color: black;">-Deve ser usado de modo visível durante todo o expediente;</p>
+                                  <p class="card-text" style="text-align: left;font-size: 15px;margin-top: 4px;color: black;">-Em caso de perda comunique imediatamente o RH;</p>
+                                  <p class="card-text" style="text-align: left;font-size: 15px;margin-top: 4px;color: black;">-Este crachá deve ser devolvido em caso de desligamento da empresa;</p>
+                                  <hr>
+                                  <p class="card-text" style="text-align: left;font-size: 17px;margin-top: 4px;color: black;"><b>Matricula:</b> <%= funcionarios.id_func%></p>
+                                  <p class="card-text" style="text-align: left;font-size: 17px;margin-top: 4px;color: black;"><b>Nome:</b> <%= funcionarios.nome%></p>
+                                  <p class="card-text" style="text-align: left;font-size: 17px;margin-top: 4px;color: black;"><b>Função:</b> <%= funcionarios.funcao%></p>
+                              
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

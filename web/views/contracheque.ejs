@@ -1,0 +1,74 @@
+<%- include('menu') -%>
+<%- include('navbar') -%>
+
+<div class="main-content">
+    <div class="row">
+        <div class="col-lg-12 col-md-12">
+            <div class="card" style="min-height: 485px">
+                <div class="card-header card-header-text">
+                    <h4 class="card-title">Lista de Contracheques</h4>
+                </div>
+                <div class="card-content table-responsive" style="padding: 10px;">
+                    <table class="table table-hover">
+                        <thead class="text-primary">
+                            <tr>
+                                <th>Funcionario</th>
+                                <th>Mês</th>
+                                <th colspan="2" style="text-align:center;">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Kaio</td>
+                                <td>Junho</td>
+                                <td><a href="#"
+                                    class="btn btn-sm btn-warning" style="width: 100%;" onclick="mostrarModal()">Visualizar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="fechar" onclick="fecharModal()"></button>
+        </div>
+        <div class="modal-body">
+            <%- include('formsContracheque') -%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="downloadPDF()">Baixar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script>
+    function mostrarModal(){
+        let el = document.getElementById('staticBackdrop');
+        let staticBackdrop = new bootstrap.Modal(el);
+        staticBackdrop.show();  
+    }
+
+    function downloadPDF() {
+        const item = document.querySelector(".formsContracheque");
+
+        var opt = {
+            margin: 0.5,
+            filename: "contracheque.pdf",
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+        };
+
+        html2pdf().set(opt).from(item).save();
+    }
+</script>

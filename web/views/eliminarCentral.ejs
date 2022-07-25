@@ -1,0 +1,30 @@
+
+<div class="form-floating mb-3">
+    <input readonly type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome" value="<%= modelo.nome%>"/>
+    <label for="nome" class="form-label">Digite seu nome</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input readonly type="text" class="form-control" id="funcao" name="funcao" placeholder="Cargo" value="<%= modelo.funcao%>"/>
+    <label for="funcao" class="form-label">Cargo</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input readonly type="email" class="form-control" id="email" name="email" placeholder="email@email.com" value="<%= modelo.email%>"/>
+    <label for="email" class="form-label">Digite seu email</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input readonly type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" value="<%= modelo.senha%>"/>
+    <label for="senha" class="form-label">Digite sua senha</label>
+</div>
+
+<div class="form-floating mb-3">
+    <label for="foto">Foto para perfil</label>
+</div>
+
+<div class="form-floating mb-3">
+    <div class="col sm-10">
+        <input readonly type="file" class="form-control-file" id="" name="foto" value="<%= modelo.foto%>">
+    </div>
+</div>
